@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { Container } from '../components/GlobalStyle';
-import { PhotosGrid } from './homepageStyles';
-import { pageAnimation } from './globalAnimations';
+import { PhotosGrid } from '../styles/pages/homepage';
+import { pageAnimation } from './../animations/globalAnimations';
 import { photos } from '../utils/photos';
 
 const Home = () => (

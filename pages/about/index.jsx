@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { Container, PageTitle, LinkButton, InlineIcon, Hide } from '../../components/GlobalStyle';
-import { AboutTextBlock } from './styles';
-import { pageAnimation, textAnimation } from '../globalAnimations';
+import { AboutTextBlock } from './../../styles/pages/about';
+import { pageAnimation, textAnimation } from '../../animations/globalAnimations';
 
 const About = ({ texts }) => {
   const aboutTexts = texts.pages.find(page => page.id === 'about');

@@ -2,8 +2,8 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { Container, PageTitle } from "../../components/GlobalStyle";
-import { pageAnimation } from '../globalAnimations';
-import { PhotoSection } from './styles';
+import { pageAnimation } from '../../animations/globalAnimations';
+import { PhotoSection } from './../../styles/pages/works';
 import { photos } from '../../utils/photos';
 
 const Work = () => {

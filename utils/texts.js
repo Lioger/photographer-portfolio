@@ -65,18 +65,18 @@ export const texts = [
           //   link: 'https://instagram.com/xeniauxenia',
           //   iconPath: instagram,
           // },
-          {
-            id: 'telegram',
-            text: 'xeniauxenia',
-            link: 'https://telegram.com/xeniauxenia',
-            iconPath: telegram,
-          },
-          {
-            id: 'vkontakte',
-            text: 'Ksenia Dulishkevich',
-            link: 'https://vk.com/xeniauxenia',
-            iconPath: vk,
-          },
+          // {
+          //   id: 'telegram',
+          //   text: 'xeniauxenia',
+          //   link: 'https://telegram.com/xeniauxenia',
+          //   iconPath: telegram,
+          // },
+          // {
+          //   id: 'vkontakte',
+          //   text: 'Ksenia Dulishkevich',
+          //   link: 'https://vk.com/xeniauxenia',
+          //   iconPath: vk,
+          // },
         ],
       },
       {
@@ -147,18 +147,18 @@ export const texts = [
           //   link: 'https://instagram.com/xeniauxenia',
           //   iconPath: instagram,
           // },
-          {
-            id: 'telegram',
-            text: 'xeniauxenia',
-            link: 'https://telegram.com/xeniauxenia',
-            iconPath: telegram,
-          },
-          {
-            id: 'vkontakte',
-            text: 'Ксения Дуликшевич',
-            link: 'https://vk.com/xeniauxenia',
-            iconPath: vk,
-          },
+          // {
+          //   id: 'telegram',
+          //   text: 'xeniauxenia',
+          //   link: 'https://telegram.com/xeniauxenia',
+          //   iconPath: telegram,
+          // },
+          // {
+          //   id: 'vkontakte',
+          //   text: 'Ксения Дуликшевич',
+          //   link: 'https://vk.com/xeniauxenia',
+          //   iconPath: vk,
+          // },
         ],
       },
       {

@@ -2,8 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Container, PageTitle, InlineIcon } from "../../components/GlobalStyle";
-import { pageAnimation } from '../globalAnimations';
-import { PhotoSection, PhotoWrapper, SeeMoreButton } from './styles';
+import { pageAnimation } from '../../animations/globalAnimations';
+import { PhotoSection, PhotoWrapper, SeeMoreButton } from './../../styles/pages/works';
 import { photos } from '../../utils/photos';
 
 const Works = ({ texts }) => {

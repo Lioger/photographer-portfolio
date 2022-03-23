@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Container, PageTitle, TextBlock } from "../../components/GlobalStyle";
-import { ContactInfoSection, ContactLink, ContactLinkIcon } from './styles';
-import { pageAnimation } from '../globalAnimations';
+import { ContactInfoSection, ContactLink, ContactLinkIcon } from './../../styles/pages/cooperation';
+import { pageAnimation } from '../../animations/globalAnimations';
 
 const Contact = ({ texts }) => {
   const contactTexts = texts.pages.find(page => page.id === 'cooperation');
