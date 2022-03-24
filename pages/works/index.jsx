@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Container, PageTitle, InlineIcon } from "../../components/GlobalStyle";
 import { pageAnimation } from '../../animations/globalAnimations';
-import { PhotoSection, PhotoWrapper, SeeMoreButton } from './../../styles/pages/works';
+import { PhotoSection, PhotoWrapper, Overlay } from './../../styles/pages/works';
 import { photos } from '../../utils/photos';
 
 const Works = ({ texts }) => {
@@ -17,14 +17,13 @@ const Works = ({ texts }) => {
         <PageTitle>{worksTexts.pageTitle}</PageTitle>
         <PhotoSection>
           {photos.map(photo => (
-            <PhotoWrapper key={photo.id}>
-              <Image src={photo.cover} alt={photo.modelName} placeholder='blur' />
-              <Link href={`/works/${photo.id}`}>
-                <SeeMoreButton>
-                  See more <InlineIcon>&#8594;</InlineIcon>
-                </SeeMoreButton>
-              </Link>
-            </PhotoWrapper>
+            <Link href={`/works/${photo.id}`} key={photo.id}>
+              <PhotoWrapper style={{backgroundImage: `url(${photo.cover.src})`}}>
+                <Overlay>
+                  {photo.modelName}
+                </Overlay>
+              </PhotoWrapper>
+            </Link>
           ))}
         </PhotoSection>
       </Container>

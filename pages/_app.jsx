@@ -12,7 +12,7 @@ const MyApp = ({ Component, pageProps }) => {
     <>
       <GlobalStyle />
       <Header links={textsForSelectedLang.nav} />
-      <AnimatePresence exitBeforeEnter onExitComplete={() => window.scrollTo(0, 0)}>
+      <AnimatePresence exitBeforeEnter>
         <Hide key={router.asPath}>
           <Component {...pageProps} texts={textsForSelectedLang} />
         </Hide>
