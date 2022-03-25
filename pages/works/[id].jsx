@@ -9,7 +9,8 @@ import {
   GalleryModal,
   CloseButton,
   Gallery,
-  ControlButtonsContainer
+  ControlButtonsContainer,
+  ControlArrow,
 } from './../../styles/components/gallery';
 import { photos } from '../../utils/photos';
 
@@ -30,7 +31,8 @@ const Work = () => {
     setIsGaleryOpened(false);
   }
 
-  const applyControl = (type) => {
+  const applyControl = (e, type) => {
+    e.stopPropagation();
     const indexofCurrent = allPhotosArr.indexOf(openedPhoto);
     let newIndex = type === 'next' ?
       (indexofCurrent + 1) % allPhotosArr.length :
@@ -62,17 +64,25 @@ const Work = () => {
         )}
         <GalleryModal className={!isGalleryOpened && 'hidden'}>
           <CloseButton onClick={closeGallery}>x</CloseButton>
-          <Gallery style={{backgroundImage: `url(${openedPhoto?.src})`}}>
+          <Gallery>
             <Image
               src={openedPhoto}
               alt={photoset?.modelName}
               placeholder='blur'
             />
+            <ControlButtonsContainer>
+              <ControlArrow
+                className='left'
+                onClick={(e) => applyControl(e, 'prev')}
+                whileTap={{ scale: 0.9 }}
+              >←</ControlArrow>
+              <ControlArrow
+                className='right'
+                onClick={(e) => applyControl(e, 'next')}
+                whileTap={{ scale: 0.9 }}
+              >→</ControlArrow>
+            </ControlButtonsContainer>
           </Gallery>
-          <ControlButtonsContainer>
-              <div onClick={() => applyControl('prev')}>←</div>
-              <div onClick={() => applyControl('next')}>→</div>
-          </ControlButtonsContainer>
         </GalleryModal>
       </Container>
     </>

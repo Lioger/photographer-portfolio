@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const GalleryModal = styled.div`
   position: fixed;
@@ -10,8 +11,7 @@ export const GalleryModal = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 5% 5%;
+  padding: 5%;
 
   &.hidden {
     display: none !important;
@@ -34,23 +34,47 @@ export const CloseButton = styled.div`
 `;
 
 export const Gallery = styled.div`
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
-  height: 80%;
+  height: max-content;
+  max-height: 80%;
   margin: 0 auto;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  display: flex;
+  justify-content: center;
 
   img {
-    max-height: 100%;
+    max-height: 80vh;
   }
 `;
 
 export const ControlButtonsContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: center;
-  gap: 30%;
+  justify-content: space-between;
   font-size: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+`;
+
+export const ControlArrow = styled(motion.div)`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+
+  &.left {
+    padding-right: 20%;
+  }
+  &.right {
+    padding-left: 20%;
+  }
 `;
