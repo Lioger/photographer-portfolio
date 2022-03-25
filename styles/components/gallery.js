@@ -31,6 +31,7 @@ export const CloseButton = styled.div`
   align-items: center;
   font-size: 0.9rem;
   line-height: 0.9rem;
+  cursor: pointer;
 `;
 
 export const Gallery = styled.div`
@@ -70,6 +71,7 @@ export const ControlArrow = styled(motion.div)`
   display: flex;
   align-items: center;
   padding: 0 1.5rem;
+  cursor: pointer;
 
   &.left {
     padding-right: 20%;
