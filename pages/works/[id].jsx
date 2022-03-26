@@ -83,12 +83,12 @@ const Work = () => {
                 <ControlArrow
                   className='left'
                   onClick={(e) => applyControl(e, 'prev')}
-                  whileTap={{ scale: 0.9 }}
+                  whileTap={{ scale: 0.9, transformOrigin: 'center' }}
                 >←</ControlArrow>
                 <ControlArrow
                   className='right'
                   onClick={(e) => applyControl(e, 'next')}
-                  whileTap={{ scale: 0.9 }}
+                  whileTap={{ scale: 0.9, transformOrigin: 'center' }}
                 >→</ControlArrow>
               </ControlButtonsContainer>
             </Gallery>

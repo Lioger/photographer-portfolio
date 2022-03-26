@@ -23,8 +23,8 @@ export const CloseButton = styled.div`
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  color: white;
-  border: 1px solid white;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
