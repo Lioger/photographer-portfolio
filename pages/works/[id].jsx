@@ -13,6 +13,7 @@ import {
   ControlArrow,
 } from './../../styles/components/gallery';
 import { photos } from '../../utils/photos';
+import { AnimatePresence } from 'framer-motion';
 
 const Work = () => {
   const router = useRouter();
@@ -20,15 +21,15 @@ const Work = () => {
   const photoId = Number(pathArr[pathArr.length - 1]);
   const photoset = photos.find(photo => photo.id === photoId);
   const allPhotosArr = photoset ? [photoset.cover, ...photoset.photos] : [];
-  const [isGalleryOpened, setIsGaleryOpened] = useState(false);
+  const [gallerySize, setGallerySize] = useState(0);
   const [openedPhoto, setOpenedPhoto] = useState(allPhotosArr ? allPhotosArr[0] : { src: '' });
 
   const openGallery = (e) => {
-    setIsGaleryOpened(true);
+    setGallerySize(1);
     setOpenedPhoto(allPhotosArr[e.target.dataset.id]);
   }
   const closeGallery = () => {
-    setIsGaleryOpened(false);
+    setGallerySize(0);
   }
 
   const applyControl = (e, type) => {
@@ -62,28 +63,37 @@ const Work = () => {
             ))}
           </PhotosGrid>
         )}
-        <GalleryModal className={!isGalleryOpened && 'hidden'}>
-          <CloseButton onClick={closeGallery}>x</CloseButton>
-          <Gallery>
-            <Image
-              src={openedPhoto}
-              alt={photoset?.modelName}
-              placeholder='blur'
-            />
-            <ControlButtonsContainer>
-              <ControlArrow
-                className='left'
-                onClick={(e) => applyControl(e, 'prev')}
-                whileTap={{ scale: 0.9 }}
-              >←</ControlArrow>
-              <ControlArrow
-                className='right'
-                onClick={(e) => applyControl(e, 'next')}
-                whileTap={{ scale: 0.9 }}
-              >→</ControlArrow>
-            </ControlButtonsContainer>
-          </Gallery>
-        </GalleryModal>
+        <AnimatePresence>
+          <GalleryModal
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{
+              opacity: gallerySize,
+              scale: gallerySize,
+              transition: { duration: 0.3, ease: 'easeOut' }
+            }}
+          >
+            <CloseButton onClick={closeGallery}>x</CloseButton>
+            <Gallery>
+              <Image
+                src={openedPhoto}
+                alt={photoset?.modelName}
+                placeholder='blur'
+              />
+              <ControlButtonsContainer>
+                <ControlArrow
+                  className='left'
+                  onClick={(e) => applyControl(e, 'prev')}
+                  whileTap={{ scale: 0.9 }}
+                >←</ControlArrow>
+                <ControlArrow
+                  className='right'
+                  onClick={(e) => applyControl(e, 'next')}
+                  whileTap={{ scale: 0.9 }}
+                >→</ControlArrow>
+              </ControlButtonsContainer>
+            </Gallery>
+          </GalleryModal>
+        </AnimatePresence>
       </Container>
     </>
   );

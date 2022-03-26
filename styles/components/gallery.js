@@ -1,16 +1,14 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-export const GalleryModal = styled.div`
+export const GalleryModal = styled(motion.div)`
+  transform-origin: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 5%;
 
   &.hidden {
@@ -19,8 +17,9 @@ export const GalleryModal = styled.div`
 `;
 
 export const CloseButton = styled.div`
-  justify-self: flex-start;
-  align-self: flex-end;
+  position: absolute;
+  top: 3%;
+  right: 3%;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
