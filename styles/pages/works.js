@@ -29,7 +29,7 @@ export const Overlay = styled.div`
   letter-spacing: 0.3rem;
   text-align: center;
   font-size: 1.5rem;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0));
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 
   @media (max-width: 768px) {
     font-size: 1.1rem;

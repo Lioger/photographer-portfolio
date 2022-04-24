@@ -18,7 +18,7 @@ const Contact = ({ texts }) => {
       <TextBlock>{contactTexts.description}</TextBlock>
       <ContactInfoSection>
         {contactTexts.contactLinks.map(contactLink => (
-          <ContactLink key={contactLink.id} href={contactLink.link}>
+          <ContactLink key={contactLink.id} href={contactLink.link} target="_blank" rel="noopener noreferrer">
             <ContactLinkIcon src={contactLink.iconPath.src} alt={contactLink.id} />
             {contactLink.text}
           </ContactLink>

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const GalleryModal = styled(motion.div)`
   transform-origin: center;
@@ -8,7 +8,6 @@ export const GalleryModal = styled(motion.div)`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
   padding: 5%;
 
   &.hidden {
@@ -31,6 +30,15 @@ export const CloseButton = styled.div`
   font-size: 0.9rem;
   line-height: 0.9rem;
   cursor: pointer;
+`;
+
+export const GalleryShadow = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
 `;
 
 export const Gallery = styled.div`

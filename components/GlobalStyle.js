@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from "styled-components";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
+import { backgroundColor, textColor } from "../utils/colors";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -8,8 +9,8 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background-color: rgb(100, 100, 100);
-    color: white;
+    background-color: ${backgroundColor};
+    color: ${textColor};
     font-family: 'Montserrat', sans-serif;
   }
   a {
@@ -39,7 +40,6 @@ export const Container = styled(motion.div)`
   }
 `;
 
-
 export const Hide = styled(motion.div)`
   overflow: hidden;
 `;
@@ -60,17 +60,17 @@ export const TextBlock = styled(motion.p)`
 `;
 
 export const LinkButton = styled(motion.a)`
-  border: 1px solid white;
+  border: 1px solid ${textColor};
   border-radius: 8px;
   padding: 0.5rem 1rem;
   display: block;
   width: max-content;
   cursor: pointer;
-  color: white;
+  color: ${textColor};
 
   &:hover {
-    background-color: white;
-    color: rgb(100, 100, 100);
+    background-color: ${textColor};
+    color: ${backgroundColor};
   }
 `;
 

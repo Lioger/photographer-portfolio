@@ -1,22 +1,24 @@
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
-import { Container } from '../GlobalStyle';
+import { Container } from "../GlobalStyle";
+import { textColor } from "../../utils/colors";
 
 export const HeaderStyled = styled(motion.header)`
   height: calc(100vh / 4);
-  border-bottom: 1px solid white;
-  color: white;
+  border-bottom: 1px solid ${textColor};
+  color: ${textColor};
   display: flex;
   justify-content: center;
 `;
 
 export const Logo = styled(motion.div)`
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
   text-align: center;
   cursor: pointer;
+  opacity: 1;
 `;
 
 export const HeaderContainer = styled(Container)`
@@ -42,5 +44,5 @@ export const Line = styled(motion.div)`
   margin-top: 0.25rem;
   height: 0.08rem;
   border-radius: 1rem;
-  background-color: white;
+  background-color: ${textColor};
 `;
