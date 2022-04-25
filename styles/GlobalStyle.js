@@ -1,6 +1,6 @@
-import styled, { createGlobalStyle } from "styled-components";
-import { motion } from "framer-motion";
-import { backgroundColor, textColor } from "../utils/colors";
+import styled, { createGlobalStyle } from 'styled-components';
+import { motion } from 'framer-motion';
+import { backgroundColor, textColor } from '../utils/colors';
 
 const GlobalStyle = createGlobalStyle`
   * {

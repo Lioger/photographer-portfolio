@@ -1,13 +1,11 @@
-import styled from "styled-components";
-import { motion } from "framer-motion";
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+
+import { absoluteBanner } from './../mixins.js';
 
 export const GalleryModal = styled(motion.div)`
   transform-origin: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  ${absoluteBanner}
   padding: 5%;
 
   &.hidden {
@@ -33,11 +31,7 @@ export const CloseButton = styled.div`
 `;
 
 export const GalleryShadow = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  ${absoluteBanner}
   background-color: rgba(0, 0, 0, 0.6);
 `;
 

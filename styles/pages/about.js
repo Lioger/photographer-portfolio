@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TextBlock } from "../../components/GlobalStyle";
+import { TextBlock } from '../GlobalStyle';
 
 export const AboutTextBlock = styled(TextBlock)`
   display: flex;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { LinkButton } from './../../components/GlobalStyle';
+import { LinkButton } from './../GlobalStyle';
 
 export const PhotoSection = styled.section`
   width: 100%;
