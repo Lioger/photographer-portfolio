@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { motion } from "framer-motion";
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-import { Container } from "../GlobalStyle";
-import { textColor } from "../../utils/colors";
+import { Container } from '../../styles/GlobalStyle';
+import { textColor } from '../../utils/colors';
 
 export const HeaderStyled = styled(motion.header)`
   height: calc(100vh / 4);
