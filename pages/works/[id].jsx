@@ -26,7 +26,6 @@ export const getStaticProps = async ({ params }) => {
 
 const Work = ({ photoset }) => {
   const dispatch = useDispatch();
-  const gallerySize = useSelector((state) => state.gallerySize);
   const allPhotosArr = [photoset.cover, ...photoset.photos];
   const [openedPhoto, setOpenedPhoto] = useState(allPhotosArr ? allPhotosArr[0] : { src: '' });
 
@@ -57,7 +56,7 @@ const Work = ({ photoset }) => {
               alt={photoset.modelName}
               onClick={open}
               data-id={index}
-              className={photoSrc.height > photoSrc.width ? 'vertical-photo' : 'horizontal-photo'}
+              className={photoSrc.horizontal ? 'horizontal-photo' : 'vertical-photo'}
             />
           ))}
         </PhotosGrid>
