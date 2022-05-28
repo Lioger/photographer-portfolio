@@ -73,6 +73,7 @@ export const ControlArrow = styled(motion.div)`
   align-items: center;
   padding: 0 1.5rem;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 
   &.left {
     padding-right: 20%;
