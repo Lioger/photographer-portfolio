@@ -1,10 +1,12 @@
+import { useSelector } from 'react-redux';
 import Head from 'next/head';
 import { Container, PageTitle, TextBlock } from '../../styles/GlobalStyle';
 import { ContactInfoSection, ContactLink, ContactLinkIcon } from './../../styles/pages/cooperation';
 import { pageAnimation } from '../../animations/globalAnimations';
 
-const Contact = ({ texts }) => {
-  const contactTexts = texts.pages.find((page) => page.id === 'cooperation');
+const Contact = () => {
+  const contactTexts = useSelector((state) => state.texts).pages.find((page) => page.id === 'cooperation');
+
   return (
     <Container variants={pageAnimation} initial="hidden" animate="show" exit="exit">
       <Head>

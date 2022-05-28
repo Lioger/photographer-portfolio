@@ -1,12 +1,21 @@
+import { useSelector } from 'react-redux';
 import Head from 'next/head';
 import Link from 'next/link';
 import { Container, PageTitle } from '../../styles/GlobalStyle';
 import { pageAnimation } from '../../animations/globalAnimations';
 import { PhotoSection, PhotoWrapper, Overlay } from './../../styles/pages/works';
-import { photos } from '../../utils/photos';
+import { photosets } from '../../utils/photosets';
 
-const Works = ({ texts }) => {
-  const worksTexts = texts.pages.find((page) => page.id === 'works');
+export const getStaticProps = async () => {
+  return {
+    props: {
+      allPhotosets: photosets,
+    },
+  };
+};
+
+const Works = ({ allPhotosets }) => {
+  const worksTexts = useSelector((state) => state.texts).pages.find((page) => page.id === 'works');
   return (
     <>
       <Head>
@@ -15,7 +24,7 @@ const Works = ({ texts }) => {
       <Container variants={pageAnimation} initial="hidden" animate="show" exit="exit">
         <PageTitle>{worksTexts.pageTitle}</PageTitle>
         <PhotoSection>
-          {photos.map((photo) => (
+          {allPhotosets.map((photo) => (
             <Link href={`/works/${photo.id}`} key={photo.id}>
               <PhotoWrapper
                 style={{

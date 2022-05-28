@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { absoluteBanner } from './../mixins.js';
+import { absoluteBanner } from './../../styles/mixins';
 
 export const GalleryModal = styled(motion.div)`
   transform-origin: center;

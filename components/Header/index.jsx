@@ -1,10 +1,11 @@
+import { useSelector } from 'react-redux';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { HeaderStyled, Logo, HeaderContainer, Nav, LinkStyled, Line } from './styles';
 
-const Header = ({ links }) => {
-  const router = useRouter();
-  const currentPath = router.pathname;
+const Header = () => {
+  const links = useSelector((state) => state.texts).nav;
+  const currentPath = useRouter().pathname;
 
   return (
     <HeaderStyled>
@@ -13,7 +14,7 @@ const Header = ({ links }) => {
           <Logo>XENIA DULISHKEVICH</Logo>
         </Link>
         <Nav>
-          {links.map(link => (
+          {links.map((link) => (
             <Link href={link.path} key={link.id}>
               <LinkStyled>
                 {link.title}
@@ -21,8 +22,9 @@ const Header = ({ links }) => {
                   transition={{ duration: 0.7 }}
                   initial={{ width: 0 }}
                   animate={{
-                    width: currentPath === link.path ? '100%' : '0'
-                  }} />
+                    width: currentPath === link.path ? '100%' : '0',
+                  }}
+                />
               </LinkStyled>
             </Link>
           ))}

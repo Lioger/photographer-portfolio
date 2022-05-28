@@ -1,23 +1,25 @@
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import { useRouter } from 'next/router';
 import { AnimatePresence } from 'framer-motion';
 import GlobalStyle, { Hide } from '../styles/GlobalStyle';
 import Header from '../components/Header';
-import { texts } from '../utils/texts';
+import reducers from '../reducers';
+
+export const store = createStore(reducers);
 
 const MyApp = ({ Component, pageProps }) => {
-  const chosenLang = 'en';
   const router = useRouter();
-  const textsForSelectedLang = texts.find((textsObj) => textsObj.lang === chosenLang);
   return (
-    <>
+    <Provider store={store}>
       <GlobalStyle />
-      <Header links={textsForSelectedLang.nav} />
+      <Header />
       <AnimatePresence exitBeforeEnter>
         <Hide key={router.asPath}>
-          <Component {...pageProps} texts={textsForSelectedLang} />
+          <Component {...pageProps} />
         </Hide>
       </AnimatePresence>
-    </>
+    </Provider>
   );
 };
 
